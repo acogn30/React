@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IoT Sensors Workshop</title>
+</head>
+<body>
+<h1>IoT Sensors Workshop</h1>
+<script>
+class Sensor {
+constructor(id, location) {
+this.id = id;
+this.location = location;
+}
+
+  getInfo() {
+    console.log(`Sensor ID: ${this.id}, Location: ${this.location}`);
+  }
+}
+
+class TemperatureSensor extends Sensor {
+  constructor(id, location, temperature) {
+    super(id, location);  // 調用父類的構造函數
+    this.temperature = temperature;
+  }
+
+  getTemperature() {
+    super.getInfo();  // 調用父類的方法
+    console.log(`Temperature: ${this.temperature}°C`);
+  }
+}
+
+// 創建一個 TemperatureSensor 對象並測試其方法
+const tempSensor = new TemperatureSensor('T1001', 'Living Room', 22.5);
+tempSensor.getTemperature();
+// 輸出：
+// Sensor ID: T1001, Location: Living Room
+// Temperature: 22.5°C
+
+
+</script>
+</body>
+</html>

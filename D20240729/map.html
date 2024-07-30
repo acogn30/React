@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT Dashboard</title>
+</head>
+<body>
+  <h1>IoT 溫度監控表格</h1>
+  <table border="1" id="temperatureTable">
+    <thead>
+      <tr>
+        <th>Hour</th>
+        <th>Temperature (°C)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="row0"><td>Hour 0</td><td></td></tr>
+      <tr id="row1"><td>Hour 1</td><td></td></tr>
+      <tr id="row2"><td>Hour 2</td><td></td></tr>
+      <tr id="row3"><td>Hour 3</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    const temperature =[35,34,36,36];
+    
+    temperature.map((value, index) => {
+        const row = document.getElementById('row' + index);
+        const temperatureCell = row.querySelectorAll('td');
+        temperatureCell[1].textContent = value;
+    });
+
+    </script>
+
+</body>
+</html>
